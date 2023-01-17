@@ -6,6 +6,8 @@ class keyboard (
   String $kvmtoggle_secret,
   String $kvmtoggle_version = 'v0.0.1',
 ) {
+  package { 'usbutils': }
+
   file { '/boot/config.txt':
     ensure => file,
     source => 'puppet:///modules/keyboard/config.txt',

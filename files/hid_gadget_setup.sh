@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # Snippet from https://github.com/girst/hardpass-sendHID/blob/master/README.md . In which, the following notice was left:
 
 # this is a stripped down version of https://github.com/ckuethe/usbarmory/wiki/USB-Gadgets - I don't claim any rights
