@@ -5,7 +5,8 @@
 # this is a stripped down version of https://github.com/ckuethe/usbarmory/wiki/USB-Gadgets - I don't claim any rights
 
 if [ "$(lsusb)" != "Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub" ]; then
-	exit
+    echo 'not connected to root hub'
+    exit 1
 fi
 
 modprobe libcomposite
