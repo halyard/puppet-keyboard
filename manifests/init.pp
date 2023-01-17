@@ -17,9 +17,9 @@ class keyboard (
   }
 
   file { '/usr/local/bin/hid_gadget_setup.sh':
-    ensure  => file,
-    mode    => '0755',
-    content => 'puppet:///modules/keyboard/hid_gadget_setup.sh',
+    ensure => file,
+    mode   => '0755',
+    source => 'puppet:///modules/keyboard/hid_gadget_setup.sh',
   }
 
   -> file { '/etc/systemd/system/hid-setup.service':
