@@ -33,7 +33,7 @@ class keyboard (
   }
 
   $binfile = '/usr/local/bin/kvmtoggle'
-  $url = "https://github.com/akerl/navigate/releases/download/${kvmtoggle_version}/kvmtoggle_linux_arm64"
+  $url = "https://github.com/akerl/kvmtoggle/releases/download/${kvmtoggle_version}/kvmtoggle_linux_arm64"
 
   exec { 'download kvmtoggle':
     command => "/usr/bin/curl -sLo '${binfile}' '${url}' && chmod a+x '${binfile}'",

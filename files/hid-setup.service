@@ -2,8 +2,9 @@
 Description=Set up USB HID OTG device
 
 [Service]
-Type=simple
+Type=oneshot
 ExecStart=/usr/local/bin/hid_gadget_setup.sh
+RemainAfterExit=true
 
 [Install]
 WantedBy=multi-user.target
