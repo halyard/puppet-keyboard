@@ -18,10 +18,11 @@ echo 0x0104 > idProduct # Multifunction Composite Gadget
 echo 0x0100 > bcdDevice # v1.0.0
 echo 0x0200 > bcdUSB # USB2
 mkdir -p strings/0x409
-echo "deadbeef01234567890" > strings/0x409/serialnumber
-echo "example.com" > strings/0x409/manufacturer
-echo "Generic USB Keyboard" > strings/0x409/product
-mkdir -p functions/hid.usb0
+echo "fedcba9876543210" > strings/0x409/serialnumber
+echo "girst" > strings/0x409/manufacturer 
+echo "Hardpass" > strings/0x409/product
+N="usb0"
+mkdir -p functions/hid.$N
 echo 1 > functions/hid.usb0/protocol
 echo 1 > functions/hid.usb0/subclass
 echo 8 > functions/hid.usb0/report_length
@@ -30,6 +31,5 @@ C=1
 mkdir -p configs/c.$C/strings/0x409
 echo "Config $C: ECM network" > configs/c.$C/strings/0x409/configuration
 echo 250 > configs/c.$C/MaxPower
-ln -s functions/hid.usb0 configs/c.$C/
+ln -s functions/hid.$N configs/c.$C/
 ls /sys/class/udc > UDC
-
