@@ -1,0 +1,11 @@
+[Unit]
+Description=Server to listen for KVM toggle requests
+
+[Service]
+ExecStart=/usr/local/bin/kvmtoggle serve
+Environment=KVMTOGGLE_KEY=<%= @kvmtoggle_secret %>
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
