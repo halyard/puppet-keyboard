@@ -1,0 +1,5 @@
+disable_overscan=1
+dtoverlay=dwc2
+
+[pi3]
+enable_uart=1

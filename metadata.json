@@ -1,0 +1,16 @@
+{
+  "name": "halyard-keyboard",
+  "version": "0.0.1",
+  "author": "Les Aker",
+  "license": "MIT",
+  "summary": "Configure keyboard OTG gadget",
+  "source": "https://github.com/halyard/puppet-keyboard",
+  "project_page": "https://github.com/halyard/puppet-keyboard",
+  "issues_url": "https://github.com/halyard/puppet-keyboard/issues",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+
+  ]
+}

@@ -1,0 +1,9 @@
+[Unit]
+Description=Set up USB HID OTG device
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/hid_gadget_setup.sh
+
+[Install]
+WantedBy=multi-user.target
