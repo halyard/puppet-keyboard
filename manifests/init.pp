@@ -49,4 +49,10 @@ class keyboard (
     ensure => running,
     enable => true,
   }
+
+  firewall { "100 allow inbound 8080 for kvmtoggle":
+    dport  => 8080,
+    proto  => 'tcp',
+    action => 'accept',
+  }
 }
