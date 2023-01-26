@@ -35,7 +35,14 @@ class keyboard (
   }
 
   $binfile = '/usr/local/bin/kvmtoggle'
-  $url = "https://github.com/akerl/kvmtoggle/releases/download/${kvmtoggle_version}/kvmtoggle_linux_arm64"
+  $arch = $facts['os']['architecture'] ? {
+    'x86_64'  => 'amd64',
+    'arm64'   => 'arm64',
+    'aarch64' => 'arm64',
+    'arm'     => 'arm',
+    default   => 'error',
+  }
+  $url = "https://github.com/akerl/kvmtoggle/releases/download/${kvmtoggle_version}/kvmtoggle_linux_${arch}"
 
   exec { 'download kvmtoggle':
     command => "/usr/bin/curl -sLo '${binfile}' '${url}' && chmod a+x '${binfile}'",
