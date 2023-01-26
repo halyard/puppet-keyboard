@@ -40,6 +40,7 @@ class keyboard (
     'arm64'   => 'arm64',
     'aarch64' => 'arm64',
     'arm'     => 'arm',
+    'armv7l'  => 'arm',
     default   => 'error',
   }
   $url = "https://github.com/akerl/kvmtoggle/releases/download/${kvmtoggle_version}/kvmtoggle_linux_${arch}"
