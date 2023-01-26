@@ -44,9 +44,12 @@ class keyboard (
   }
   $url = "https://github.com/akerl/kvmtoggle/releases/download/${kvmtoggle_version}/kvmtoggle_linux_${arch}"
 
-  exec { 'download kvmtoggle':
-    command => "/usr/bin/curl -sLo '${binfile}' '${url}' && chmod a+x '${binfile}'",
-    unless  => "/usr/bin/test -f ${binfile} && ${binfile} version | grep '${kvmtoggle_version}'",
+  file { $binfile:
+    ensure => file,
+    source => $url,
+    mode   => '0755',
+    owner  => 'root',
+    group  => 'root',
   }
 
   -> file { '/etc/systemd/system/kvmtoggle.service':
